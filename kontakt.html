@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div th:insert="blocks/header :: header" ></div>
+<header class="jumbotron mt-3" >
+    <div class="container">
+        <h1 class="display-4">Kontaktform</h1>
+        <p class="lead">Schreib mir eine Nachricht!</p>
+    </div>
+
+</header>
+<div class="container">
+    <img src="pic/bmw.jpg"  alt="Bmw">
+</div>
+
+<section class="container" id="alerts">
+    <div class="alert alert-success" role="alert">
+        Anfrage versendet!
+    </div>
+    <div class="alert alert-danger" role="alert">
+        Fehler beim versenden der Anfrage
+    </div>
+</section>
+<section class="container mt-5" id="contactForm">
+    <form method="post">
+        <div class="card">
+            <div class="card-header">Kontaktformular</div>
+            <div class="card-body">
+                <div class="row form-group">
+                    <div class="col-2">
+                        Anrede:
+                    </div>
+                    <div class="col">
+                        <div class="form-check form-check-inline">
+                        <input name="salutation" type="radio" id="salutationMrs" class="form-check-input" value="mrs">
+                            <label for="salutationMrs" class="form-check-label">Frau</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                        <input name="salutation" type="radio" id="salutationMr" class="form-check-input" value="mr">
+                            <label for="salutationMr" class="form-check-label">Herr</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="col-2 col-form-label" for="name">Name:</label>
+                    <div class="col">
+                        <input type=" text" name="name" id="name" placeholder="Name" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                <label class="col-2 col-form-label" for="email">E-mail:</label>
+                <div class="col">
+                <input type=" text" name="email" id="email" placeholder="E-mail" class="form-control">
+                </div>
+                </div>
+
+                <div class="row form-group">
+                    <label class="col-2 col-form-label "for="subject">Betreff: </label>
+                    <div class="col">
+                        <select name="subject" id="subject" class="form-control">
+                            <option>Bitte wählen</option>
+                            <option value="karte">Nur Karte</option>
+                            <option value="code">Nur Freischaltcode</option>
+                            <option value="codeundkarte">Freischalcode & Karte</option>
+                            <option value="sonstiges">Sonstige Fragen oder Support</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="col-2 col-form-label" for="message">
+                        Nachricht:
+                    </label>
+                    <div class="col">
+                    <textarea id="message" class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="row form-check">
+                    <div class="offset-2 col">
+                        <input type="checkbox" name="robot" id="robot" class="form-check-input">
+                        <label for="robot" class="form-check-label">Hiermit bestätige ich, dass ich kein Roboter bin. </label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary">Anfrage senden</button>
+            </div>
+        </div>
+    </form>
+</section>
+    <!-- FOOTER -->
+    <div th:insert="blocks/footer :: footer"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
